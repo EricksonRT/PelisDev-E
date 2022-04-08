@@ -1,3 +1,11 @@
 .navDark {
     background-color: #000 !important;
 }
+
+.rounded {
+    border: solid 5px rgb(139, 25, 0);
+    width: 80%;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 100px;
+}
