@@ -9,3 +9,34 @@
     -moz-border-radius: 50px;
     border-radius: 100px;
 }
+
+#btn_buscar {
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+
+/* CSS animado bakcground */
+
+.body-animated {
+    background: #c31432;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #841e2f);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: body-animated 15s infinite ease-in-out;
+    background-size: 400% 400%;
+}
+
+@keyframes body-animated {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
