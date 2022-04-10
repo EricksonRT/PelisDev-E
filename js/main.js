@@ -1,4 +1,10 @@
-// Carga pelis cuando se completa la carga de la pagina
+// Generador de palabaras aleatorias
+let palabrasRandom = ["2022", "Dogs", "Erick", "Lady", "Movie", "Series", "Anime", "Kids", "Shark", "Final", "Fantasy"];
+const random = () => {
+        let nroArray = Math.floor(Math.random() * 11);
+        console.log(palabrasRandom[nroArray]);
+    }
+    // Carga pelis cuando se completa la carga de la pagina
 document.addEventListener('DOMContentLoaded', () => {
     let url = "https://www.omdbapi.com/?apikey=669a7ccb&s=shark&r=json&page=1";
     fetch(url)
@@ -76,7 +82,33 @@ const btnSearchKids = document.querySelector("#infantil");
 
 // funcion para ver por series
 btnSearchSeries.addEventListener("click", () => {
-    alert("series");
+    let url = "https://www.omdbapi.com/?apikey=669a7ccb&s=list&r=json&page=5&type=series";
+    fetch(url)
+        .then(response => response.json())
+        .then((data) => {
+            // console.log(data);
+            div.innerHTML = "";
+            array = data.Search;
+            if (data != null) {
+                for (let i = 0; i < array.length; i++) {
+                    const element = array[i];
+                    console.log(element);
+                    div.innerHTML += ` <div class="card-e col s2 z-depth-4">
+                                     <img class="responsive-img" src="${element.Poster}">
+                                     <p class="">${element.Title}</p>
+                                     <a class="txt disabled right">${element.Type}</a>
+                                     <p class="">Fecha de lanzamiento :${element.Year}</p>
+                                       </div>`
+                        // Animacion de carga en pelis
+                    document.getElementById('movies').classList.add('movies');
+                }
+
+            } else {
+                div.innerHTML = `<center><h5>Ha ocurrido un error con el servidor</h5></center>`
+            }
+        })
+        .catch(error => console.log(error))
+
 });
 
 // funcion para ver por Movies
