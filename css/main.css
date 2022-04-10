@@ -45,7 +45,7 @@
     background-color: rgba(0, 0, 0, 0.384);
     color: #ffff;
     width: 500px;
-    height: 350px;
+    height: 450px;
     border: 1px solid rgba(0, 0, 0, 0.194);
     margin-top: 15px;
     padding: auto;
@@ -61,6 +61,7 @@
 
 /* Animacion del hover */
 
+<<<<<<< HEAD
 #movies {
     animation: cargaPelis 1s ease-out;
 }
@@ -74,4 +75,8 @@
         margin-left: 0%;
         width: 100%;
     }
+=======
+.txt {
+    text-transform: uppercase !important;
+>>>>>>> 5ba7f2b250383501e1c2ede2b6a2aa6000396ab6
 }

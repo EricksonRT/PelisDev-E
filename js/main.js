@@ -36,6 +36,8 @@ const verInicio = (data) => {
             div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                              <img class="responsive-img" src="${element.Poster}">
                              <p class="">${element.Title}</p>
+                             <a class="txt disabled">${element.Type}</a>
+                             <p class="">Fecha de lanzamiento:${element.Year}</p>
                                </div>`
         }
 
@@ -49,27 +51,7 @@ const cargaMovies = (data) => {
     // console.log(data);
 }
 
-const f = () => {
-    let estado;
-    let numUno = parseInt(prompt("Ingresa un nro"));
-    console.log(numUno);
-    for (let i = 2; i < 10; i++) {
-        let numDos = parseInt(prompt("Ingresa un nro"));
-        console.log(numDos);
-        if (numDos > numUno) {
-            estado = true;
-            // numDos = numUno;
-        } else if (numUno > numDos) {
-            estado = false;
-            // numUno = numDos;
-        }
-    }
-    if (estado == true) {
-        console.log("Ordenado");
-    } else if (estado == false) {
-        console.log("Desordenado");
-    }
-}
+
 
 //  div.innerHTML = ` <div class="col s3 z-depth-4">
 //                 <img class="responsive-img" src="${datos.Poster}">
