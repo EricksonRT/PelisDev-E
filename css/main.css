@@ -45,7 +45,7 @@
     background-color: rgba(0, 0, 0, 0.384);
     color: #ffff;
     width: 500px;
-    height: 350px;
+    height: 450px;
     border: 1px solid rgba(0, 0, 0, 0.194);
     margin-top: 15px;
     padding: auto;
@@ -60,3 +60,7 @@
 
 
 /* Animacion del hover */
+
+.txt {
+    text-transform: uppercase !important;
+}
