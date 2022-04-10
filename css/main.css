@@ -60,3 +60,18 @@
 
 
 /* Animacion del hover */
+
+#movies {
+    animation: cargaPelis 1s ease-out;
+}
+
+@keyframes cargaPelis {
+    from {
+        margin-left: 100%;
+        width: 100%
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
