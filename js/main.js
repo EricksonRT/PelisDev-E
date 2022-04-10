@@ -68,9 +68,28 @@ const cargaMovies = (data) => {
     }
 }
 
+// variables declaradas
+const btnSearchSeries = document.querySelector("#series");
+const btnSearchMovies = document.querySelector("#peliculas");
+const btnSearchAnime = document.querySelector("#anime");
+const btnSearchKids = document.querySelector("#infantil");
 
+// funcion para ver por series
+btnSearchSeries.addEventListener("click", () => {
+    alert("series");
+});
 
-//  div.innerHTML = ` <div class="col s3 z-depth-4">
-//                 <img class="responsive-img" src="${datos.Poster}">
-//                 <p class="">z-depth-4</p>
-//             </div>`
+// funcion para ver por Movies
+btnSearchMovies.addEventListener("click", () => {
+    alert("Movies");
+})
+
+// funcion para ver por Anime
+btnSearchAnime.addEventListener("click", () => {
+    alert("Anime");
+})
+
+// funcion para ver por Kids
+btnSearchKids.addEventListener("click", () => {
+    alert("Kids");
+})
