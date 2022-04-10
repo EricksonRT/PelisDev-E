@@ -40,3 +40,23 @@
         background-position: 0 50%;
     }
 }
+
+.card-e {
+    background-color: rgba(0, 0, 0, 0.384);
+    color: #ffff;
+    width: 500px;
+    height: 350px;
+    border: 1px solid rgba(0, 0, 0, 0.194);
+    margin-top: 15px;
+    padding: auto;
+}
+
+.card-e:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all 1s;
+    padding: 5px;
+}
+
+
+/* Animacion del hover */
