@@ -58,10 +58,17 @@
     padding: 5px;
 }
 
+div>img {
+    height: 290px !important;
+}
+
+input {
+    caret-color: auto;
+}
+
 
 /* Animacion del hover */
 
-<<<<<<< HEAD
 #movies {
     animation: cargaPelis 1s ease-out;
 }
@@ -75,8 +82,26 @@
         margin-left: 0%;
         width: 100%;
     }
-=======
-.txt {
-    text-transform: uppercase !important;
->>>>>>> 5ba7f2b250383501e1c2ede2b6a2aa6000396ab6
+}
+
+.movies {
+    animation: cargaDatos 1s ease-out;
+}
+
+@keyframes cargadatos {
+    from {
+        margin-left: 100%;
+        width: 100%
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+
+/* padding icono */
+
+.icon-e {
+    margin-top: 2px;
 }

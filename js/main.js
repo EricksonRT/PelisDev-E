@@ -24,9 +24,8 @@ btnBuscar.addEventListener("click", () => {
 
 })
 
-
+let div = document.getElementById("movies");
 const verInicio = (data) => {
-    let div = document.getElementById("movies");
     // console.log(data.Search)
     array = data.Search;
     if (data != null) {
@@ -37,7 +36,7 @@ const verInicio = (data) => {
                              <img class="responsive-img" src="${element.Poster}">
                              <p class="">${element.Title}</p>
                              <a class="txt disabled">${element.Type}</a>
-                             <p class="">Fecha de lanzamiento:${element.Year}</p>
+                             <p class="disable">Año de lanzamiento: ${element.Year}</p>
                                </div>`
         }
 
@@ -48,7 +47,25 @@ const verInicio = (data) => {
 
 //Se pasa el valor de data la funcion
 const cargaMovies = (data) => {
-    // console.log(data);
+    div.innerHTML = "";
+    array = data.Search;
+    if (data != null) {
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+            console.log(element);
+            div.innerHTML += ` <div class="card-e col s2 z-depth-4">
+                             <img class="responsive-img" src="${element.Poster}">
+                             <p class="">${element.Title}</p>
+                             <a class="txt disabled right">${element.Type}</a>
+                             <p class="">Fecha de lanzamiento :${element.Year}</p>
+                               </div>`
+                // Animacion de carga en pelis
+            document.getElementById('movies').classList.add('movies');
+        }
+
+    } else {
+        div.innerHTML = `<center><h5>Ha ocurrido un error con el servidor</h5></center>`
+    }
 }
 
 
