@@ -76,7 +76,7 @@ input {
 @keyframes cargaPelis {
     from {
         margin-left: 100%;
-        width: 100%
+        width: 100%;
     }
     to {
         margin-left: 0%;
@@ -92,7 +92,7 @@ input {
 @keyframes cargadatos {
     from {
         margin-left: 100%;
-        width: 100%
+        width: 100%;
     }
     to {
         margin-left: 0%;
@@ -110,15 +110,20 @@ input {
 
 /* MEDIA QUERYS */
 
+
+/* Celulares chicos */
+
 @media (min-width: 300px) and (max-width: 400px) {
     div>img {
-        height: 50px !important;
+        width: 100% !important;
+        height: 135px !important;
     }
     .card-e {
-        width: 133px;
-        margin: 5% !important;
-        margin-left: 10% !important;
-        height: 290px;
+        width: 88px !important;
+        margin: auto !important;
+        margin-left: 3% !important;
+        margin-top: 3px !important;
+        height: 320px;
         font-size: small;
         font-size-adjust: initial;
     }
@@ -127,15 +132,20 @@ input {
     }
 }
 
-@media (min-width: 401px) and (max-width: 600px) {
+
+/* Celulares standar */
+
+@media (min-width: 401px) and (max-width: 450px) {
     div>img {
-        height: 100px !important;
+        width: 100% !important;
+        height: 150px !important;
     }
     .card-e {
-        width: 233px;
-        margin: 5% !important;
-        margin-left: 10% !important;
-        height: 350px;
+        width: 105px !important;
+        margin: auto !important;
+        margin-left: 5% !important;
+        margin-top: 3px !important;
+        height: 355px;
         font-size: small;
         font-size-adjust: initial;
     }
@@ -144,15 +154,84 @@ input {
     }
 }
 
-@media (min-width: 601px) and (max-width: 800px) {
+
+/* Tablets */
+
+@media (min-width: 451px) and (max-width: 550px) {
     div>img {
-        width: 100%;
-        height: 180px !important;
+        width: 100% !important;
+        height: 200px !important;
     }
     .card-e {
-        width: 350px;
-        margin: 5% !important;
-        margin-left: 10% !important;
+        width: 120px !important;
+        margin: auto !important;
+        margin-left: 5% !important;
+        margin-top: 3px !important;
+        height: 450px;
+        font-size: small;
+        font-size-adjust: initial;
+    }
+    .rounded {
+        width: auto;
+    }
+}
+
+
+/* Tablets medias */
+
+@media (min-width: 551px) and (max-width: 650px) {
+    div>img {
+        width: 100% !important;
+        height: 200px !important;
+    }
+    .card-e {
+        width: 25% !important;
+        margin: auto !important;
+        margin-left: 5% !important;
+        margin-top: 3px !important;
+        height: 450px;
+        font-size: small;
+        font-size-adjust: initial;
+    }
+    .rounded {
+        width: auto;
+    }
+}
+
+
+/* Ipads */
+
+@media (min-width: 651px) and (max-width: 800px) {
+    div>img {
+        width: 100% !important;
+        height: 200px !important;
+    }
+    .card-e {
+        width: 25% !important;
+        margin: auto !important;
+        margin-left: 5% !important;
+        margin-top: 3px !important;
+        height: 450px;
+        font-size: small;
+        font-size-adjust: initial;
+    }
+    .rounded {
+        width: auto;
+    }
+}
+
+
+/* Pantallas monitores */
+
+@media (min-width: 801px) and (max-width: 900px) {
+    div>img {
+        width: 100% !important;
+        height: 200px !important;
+    }
+    .card-e {
+        width: 20% !important;
+        margin: auto !important;
+        margin-left: 5% !important;
         height: 450px;
         font-size: small;
         font-size-adjust: initial;

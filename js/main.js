@@ -31,7 +31,7 @@ btnBuscar.addEventListener("click", () => {
     fetch(url)
         .then(response => response.json())
         .then(data => cargaMovies(data))
-        .catch(error => console.log(error))
+        .catch(error = () => div.innerHTML = `<center><h5>No se han encontrado coincidencias</h5></center>`)
 
 })
 
@@ -45,14 +45,12 @@ const verInicio = (data) => {
             console.log(element);
             div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                              <img class="responsive-img" src="${element.Poster}">
-                             <p class="">${element.Title}</p>
-                             <a class="txt disabled">${element.Type}</a>
+                             <a class="txt disabled right">${element.Type}</a>
+                             <p class="">${element.Title}<hr></p>
                              <p class="disable">Año de lanzamiento: ${element.Year}</p>
                                </div>`
         }
 
-    } else {
-        div.innerHTML = `<center><h5>Ha ocurrido un error con el servidor</h5></center>`
     }
 }
 
@@ -66,9 +64,15 @@ const cargaMovies = (data) => {
             console.log(element);
             div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                              <img class="responsive-img" src="${element.Poster}">
+<<<<<<< HEAD
                              <p class="">${element.Title}</p>
                              <a class="txt disabled">${element.Type}</a>
                              <p class="disable">Año de lanzamiento: ${element.Year}</p>
+=======
+                             <a class="txt disabled right">${element.Type}</a>
+                             <p class="">${element.Title}<hr></p>
+                             <p class="">Fecha de lanzamiento :${element.Year}</p>
+>>>>>>> 70b45c4c3c964aa85feeeee06e9bdf73d6804a9f
                                </div>`
                 // Animacion de carga en pelis
             document.getElementById('movies').classList.toggle('movies');
@@ -100,8 +104,8 @@ btnSearchSeries.addEventListener("click", () => {
                     console.log(element);
                     div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                                      <img class="responsive-img" src="${element.Poster}">
-                                     <p class="">${element.Title}</p>
                                      <a class="txt disabled right">${element.Type}</a>
+                                     <p class="">${element.Title}<hr></p>
                                      <p class="">Fecha de lanzamiento :${element.Year}</p>
                                        </div>`
                         // Animacion de carga en pelis
@@ -131,8 +135,8 @@ btnSearchMovies.addEventListener("click", () => {
                     console.log(element);
                     div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                                      <img class="responsive-img" src="${element.Poster}">
-                                     <p class="">${element.Title}</p>
                                      <a class="txt disabled right">${element.Type}</a>
+                                     <p class="">${element.Title}<hr></p>
                                      <p class="">Fecha de lanzamiento :${element.Year}</p>
                                        </div>`
                         // Animacion de carga en pelis
@@ -162,8 +166,8 @@ btnSearchAnime.addEventListener("click", () => {
                     console.log(element);
                     div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                                      <img class="responsive-img" src="${element.Poster}">
-                                     <p class="">${element.Title}</p>
                                      <a class="txt disabled right">${element.Type}</a>
+                                     <p class="">${element.Title}<hr></p>
                                      <p class="">Fecha de lanzamiento :${element.Year}</p>
                                        </div>`
                         // Animacion de carga en pelis
@@ -193,8 +197,8 @@ btnSearchKids.addEventListener("click", () => {
                         console.log(element);
                         div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                                      <img class="responsive-img" src="${element.Poster}">
-                                     <p class="">${element.Title}</p>
                                      <a class="txt disabled right">${element.Type}</a>
+                                     <p class="">${element.Title}<hr></p>
                                      <p class="">Fecha de lanzamiento :${element.Year}</p>
                                        </div>`
                             // Animacion de carga en pelis
