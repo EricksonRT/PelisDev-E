@@ -7,6 +7,8 @@ const random = () => {
 
 
 
+
+
 // Carga pelis cuando se completa la carga de la pagina
 document.addEventListener('DOMContentLoaded', () => {
     let url = "https://www.omdbapi.com/?apikey=669a7ccb&s=" + random() + "&r=json&page=1";
@@ -62,14 +64,14 @@ const cargaMovies = (data) => {
         for (let i = 0; i < array.length; i++) {
             const element = array[i];
             console.log(element);
-            div.innerHTML += ` <div class="card-e col s1 z-depth-4">
+            div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                              <img class="responsive-img" src="${element.Poster}">
                              <p class="">${element.Title}</p>
-                             <a class="txt disabled right">${element.Type}</a>
-                             <p class="">Fecha de lanzamiento :${element.Year}</p>
+                             <a class="txt disabled">${element.Type}</a>
+                             <p class="disable">Año de lanzamiento: ${element.Year}</p>
                                </div>`
                 // Animacion de carga en pelis
-            document.getElementById('movies').classList.add('movies');
+            document.getElementById('movies').classList.toggle('movies');
         }
 
     } else {
@@ -178,31 +180,50 @@ btnSearchAnime.addEventListener("click", () => {
 
 // funcion para ver por Kids
 btnSearchKids.addEventListener("click", () => {
-    let url = "https://www.omdbapi.com/?apikey=669a7ccb&s=kids&r=json&page=1&type=series";
-    fetch(url)
-        .then(response => response.json())
-        .then((data) => {
-            // console.log(data);
-            div.innerHTML = "";
-            array = data.Search;
-            if (data != null) {
-                for (let i = 0; i < array.length; i++) {
-                    const element = array[i];
-                    console.log(element);
-                    div.innerHTML += ` <div class="card-e col s2 z-depth-4">
+        let url = "https://www.omdbapi.com/?apikey=669a7ccb&s=kids&r=json&page=1&type=series";
+        fetch(url)
+            .then(response => response.json())
+            .then((data) => {
+                // console.log(data);
+                div.innerHTML = "";
+                array = data.Search;
+                if (data != null) {
+                    for (let i = 0; i < array.length; i++) {
+                        const element = array[i];
+                        console.log(element);
+                        div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                                      <img class="responsive-img" src="${element.Poster}">
                                      <p class="">${element.Title}</p>
                                      <a class="txt disabled right">${element.Type}</a>
                                      <p class="">Fecha de lanzamiento :${element.Year}</p>
                                        </div>`
-                        // Animacion de carga en pelis
-                    document.getElementById('movies').classList.add('movies');
+                            // Animacion de carga en pelis
+                        document.getElementById('movies').classList.add('movies');
+                    }
+
                 }
+            })
+            .catch(error = () => {
+                div.innerHTML = `<center><h5 class="">Ha ocurrido un error al cargar infantil, intente nuevamente</h5></center>`;
+            })
 
-            }
-        })
-        .catch(error = () => {
-            div.innerHTML = `<center><h5 class="">Ha ocurrido un error al cargar infantil, intente nuevamente</h5></center>`;
-        })
+    })
+    // Volver hacia arriba
+    // document.getElementById("ScrollToTop").addEventListener('click', () => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: 'smooth'
+    //     });
+    // })
 
-})
+let buttons = document.querySelectorAll('.ancla');
+buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        let target = e.currentTarget.getAttribute('href');
+        document.querySelector(target).scrollIntoView({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
