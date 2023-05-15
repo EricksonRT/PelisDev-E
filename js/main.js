@@ -1,5 +1,5 @@
-require('dotenv').config();
-
+import { API_KEY } from './apikey';
+const API_KEY = API_KEY;
 // Generador de palabaras aleatorias
 let palabrasRandom = [
   '2022',
@@ -18,8 +18,6 @@ const random = () => {
   let nroArray = Math.floor(Math.random() * 11);
   return palabrasRandom[nroArray];
 };
-
-const API_KEY = process.env.API_KEY;
 
 // Carga pelis cuando se completa la carga de la pagina
 document.addEventListener('DOMContentLoaded', () => {
