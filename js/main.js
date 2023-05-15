@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // Generador de palabaras aleatorias
 let palabrasRandom = [
   '2022',
