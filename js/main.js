@@ -1,4 +1,4 @@
-import { API_KEY } from './apikey';
+import { API_KEY } from './apikey.js';
 // const API_KEY = API_KEY;
 // Generador de palabaras aleatorias
 let palabrasRandom = [
@@ -18,10 +18,10 @@ const random = () => {
   let nroArray = Math.floor(Math.random() * 11);
   return palabrasRandom[nroArray];
 };
-
+let array = '';
 // Carga pelis cuando se completa la carga de la pagina
 document.addEventListener('DOMContentLoaded', () => {
-  let url = `https://www.omdbapi.com/?apikey=API_KEY&s=${random()}&r=json&page=1`;
+  let url = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${random()}&r=json&page=1`;
   fetch(url)
     .then((response) => response.json())
     .then((datos) => verInicio(datos))
@@ -38,19 +38,19 @@ btnBuscar.addEventListener('click', () => {
     .then((response) => response.json())
     .then((data) => cargaMovies(data))
     .catch(
-      (error = () =>
-        (div.innerHTML = `<center><h5>No se han encontrado coincidencias</h5></center>`))
+      () =>
+        (div.innerHTML = `<center><h5>No se han encontrado coincidencias</h5></center>`)
     );
 });
 
 let div = document.getElementById('movies');
 const verInicio = (data) => {
-  // console.log(data.Search)
+  // //console.log(data.Search)
   array = data.Search;
   if (data != null) {
     for (let i = 0; i < array.length; i++) {
       const element = array[i];
-      console.log(element);
+      ////console.log(element);
       div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                              <img class="responsive-img" src="${element.Poster}">
                              <a class="txt disabled right">${element.Type}</a>
@@ -68,7 +68,7 @@ const cargaMovies = (data) => {
   if (data != null) {
     for (let i = 0; i < array.length; i++) {
       const element = array[i];
-      console.log(element);
+      //console.log(element);
       div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                              <img class="responsive-img" src="${element.Poster}">
                              <p class="">${element.Title}</p>
@@ -95,13 +95,13 @@ btnSearchSeries.addEventListener('click', () => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      // console.log(data);
+      // //console.log(data);
       div.innerHTML = '';
       array = data.Search;
       if (data != null) {
         for (let i = 0; i < array.length; i++) {
           const element = array[i];
-          console.log(element);
+          //console.log(element);
           div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                                      <img class="responsive-img" src="${element.Poster}">
                                      <a class="txt disabled right">${element.Type}</a>
@@ -113,11 +113,9 @@ btnSearchSeries.addEventListener('click', () => {
         }
       }
     })
-    .catch(
-      (error = () => {
-        div.innerHTML = `<center><h5 class="">Ha ocurrido un error al cargar series, intente nuevamente</h5></center>`;
-      })
-    );
+    .catch(() => {
+      div.innerHTML = `<center><h5 class="">Ha ocurrido un error al cargar series, intente nuevamente</h5></center>`;
+    });
 });
 
 // funcion para ver por Movies
@@ -126,13 +124,13 @@ btnSearchMovies.addEventListener('click', () => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      // console.log(data);
+      // //console.log(data);
       div.innerHTML = '';
       array = data.Search;
       if (data != null) {
         for (let i = 0; i < array.length; i++) {
           const element = array[i];
-          console.log(element);
+          //console.log(element);
           div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                                      <img class="responsive-img" src="${element.Poster}">
                                      <a class="txt disabled right">${element.Type}</a>
@@ -144,11 +142,9 @@ btnSearchMovies.addEventListener('click', () => {
         }
       }
     })
-    .catch(
-      (error = () => {
-        div.innerHTML = `<center><h5 class="">Ha ocurrido un error al cargar peliculas, intente nuevamente</h5></center>`;
-      })
-    );
+    .catch(() => {
+      div.innerHTML = `<center><h5 class="">Ha ocurrido un error al cargar peliculas, intente nuevamente</h5></center>`;
+    });
 });
 
 // funcion para ver por Anime
@@ -157,13 +153,13 @@ btnSearchAnime.addEventListener('click', () => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      // console.log(data);
+      // //console.log(data);
       div.innerHTML = '';
       array = data.Search;
       if (data != null) {
         for (let i = 0; i < array.length; i++) {
           const element = array[i];
-          console.log(element);
+          //console.log(element);
           div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                                      <img class="responsive-img" src="${element.Poster}">
                                      <a class="txt disabled right">${element.Type}</a>
@@ -175,11 +171,9 @@ btnSearchAnime.addEventListener('click', () => {
         }
       }
     })
-    .catch(
-      (error = () => {
-        div.innerHTML = `<center><h5 class="">Ha ocurrido un error al cargar Animes, intente nuevamente</h5></center>`;
-      })
-    );
+    .catch(() => {
+      div.innerHTML = `<center><h5 class="">Ha ocurrido un error al cargar Animes, intente nuevamente</h5></center>`;
+    });
 });
 
 // funcion para ver por Kids
@@ -188,13 +182,13 @@ btnSearchKids.addEventListener('click', () => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      // console.log(data);
+      // //console.log(data);
       div.innerHTML = '';
       array = data.Search;
       if (data != null) {
         for (let i = 0; i < array.length; i++) {
           const element = array[i];
-          console.log(element);
+          //console.log(element);
           div.innerHTML += ` <div class="card-e col s2 z-depth-4">
                                      <img class="responsive-img" src="${element.Poster}">
                                      <a class="txt disabled right">${element.Type}</a>
@@ -206,11 +200,9 @@ btnSearchKids.addEventListener('click', () => {
         }
       }
     })
-    .catch(
-      (error = () => {
-        div.innerHTML = `<center><h5 class="">Ha ocurrido un error al cargar infantil, intente nuevamente</h5></center>`;
-      })
-    );
+    .catch(() => {
+      div.innerHTML = `<center><h5 class="">Ha ocurrido un error al cargar infantil, intente nuevamente</h5></center>`;
+    });
 });
 // Volver hacia arriba
 // document.getElementById("ScrollToTop").addEventListener('click', () => {
