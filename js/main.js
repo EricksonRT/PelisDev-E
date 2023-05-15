@@ -1,5 +1,5 @@
 import { API_KEY } from './apikey';
-const API_KEY = API_KEY;
+// const API_KEY = API_KEY;
 // Generador de palabaras aleatorias
 let palabrasRandom = [
   '2022',
